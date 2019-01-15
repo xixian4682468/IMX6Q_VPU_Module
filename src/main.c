@@ -37,14 +37,13 @@
 
 #include "File_Queue.h"
 #include "Init_dev.h"
-#include "NCC_Track.h"
-#include "qsImgLib.h"
-#include "libavformat/avformat.h"
 
+
+#include "libavformat/avformat.h"
 #include "Communication.h"
 #include "Variable_Function.h"
 #include "VPU_Camera.h"
-#include "KCF_Track.h"
+
 
 
 #define MAX_TEXT 512  
@@ -157,9 +156,14 @@ void tracking_process(void)
 	if(s != 0)
 		printf("Set pthread_setaffinity_np failed\n"); 
 	
+	//统计单帧图像获取与处理的耗时
+	struct	timeval tpstart,tpend;
+	struct	timeval tpend1,tpend2,tpend3,tpend4;
+	float timeuse;
+	float timeuse1,timeuse2,timeuse3,timeuse4;
 	
-	while(1)
-	{	
+	while()
+	{
 	
 	}
 }
@@ -188,6 +192,7 @@ void camera_process(void)
 		quitflag = 0;
 		New_JPG_filename = 0;
 		New_JPG = 0;
+		printf("Begin VPU*******\n");
 		VPU_camera(VPU_Resolution, VPU_Format);
 	}
 
