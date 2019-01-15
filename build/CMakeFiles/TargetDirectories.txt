@@ -1,0 +1,1 @@
+/mnt/hgfs/ShareFile/92x92_6Q_FPGA图像处理板/Camshift&NCC&KCF_92X92_Alashan/build/CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir

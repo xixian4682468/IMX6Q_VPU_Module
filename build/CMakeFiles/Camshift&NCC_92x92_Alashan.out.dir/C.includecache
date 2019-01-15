@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/KCF_Track.h
+stdio.h
+../include/stdio.h
+stdlib.h
+../include/stdlib.h
+math.h
+../include/math.h
+float.h
+../include/float.h
+string.h
+../include/string.h
+
+../include/ffttools.h
+
+../include/fhog.h
+
+../include/recttools.h
+
+/mnt/hgfs/ShareFile/92x92_6Q_FPGA图像处理板/Camshift&NCC&KCF_92X92_Alashan/src/KCF_Track.c
+KCF_Track.h
+/mnt/hgfs/ShareFile/92x92_6Q_FPGA图像处理板/Camshift&NCC&KCF_92X92_Alashan/src/KCF_Track.h
+stdio.h
+-
+stdlib.h
+-
+math.h
+-
+ffttools.h
+/mnt/hgfs/ShareFile/92x92_6Q_FPGA图像处理板/Camshift&NCC&KCF_92X92_Alashan/src/ffttools.h
+recttools.h
+/mnt/hgfs/ShareFile/92x92_6Q_FPGA图像处理板/Camshift&NCC&KCF_92X92_Alashan/src/recttools.h
+fhog.h
+/mnt/hgfs/ShareFile/92x92_6Q_FPGA图像处理板/Camshift&NCC&KCF_92X92_Alashan/src/fhog.h
+
