@@ -25,6 +25,8 @@ void GetSubImage(unsigned char *pSrc,unsigned char *pDst,int imgWidth,int imgHei
 //void RunLengthDetect();
 //void AutoTarDetect(unsigned short StartRow,unsigned short EndRow,unsigned short StartCol,unsigned short EndCol);
 //void Maxarea_target();
+void Init_Addr(void);
+void UnInit_Addr(void);
 
 
 #endif

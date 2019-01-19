@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/hgfs/ShareFile/92x92_6Q_FPGA图像处理板/Camshift&NCC&KCF_92X92_Alashan
+# Install script for directory: /mnt/hgfs/ShareFile/92x92_6Q_FPGA图像处理板/iMX6Q_VPU_Capture_Module
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/mnt/hgfs/ShareFile/92x92_6Q_FPGA图像处理板/Camshift&NCC&KCF_92X92_Alashan/build/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/mnt/hgfs/ShareFile/92x92_6Q_FPGA图像处理板/iMX6Q_VPU_Capture_Module/build/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/mnt/hgfs/ShareFile/92x92_6Q_FPGA图像处理板/Camshift&NCC&KCF_92X92_Alashan/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/mnt/hgfs/ShareFile/92x92_6Q_FPGA图像处理板/iMX6Q_VPU_Capture_Module/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

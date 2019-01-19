@@ -16,8 +16,9 @@ void LCD_ShowxNum(unsigned short x,unsigned short y,unsigned long num, unsigned 
 void LCD_ShowString(unsigned short x, unsigned short y, char *Pchar, unsigned char *Ppicture, unsigned int Resolution, unsigned char size);
 void LCD_Show_Chinese_Char(unsigned short x,unsigned short y,unsigned char num,unsigned char* Ppicture,unsigned int Resolution,unsigned char size);
 
-
-void DisPlay_Target_Bomen(unsigned short x, unsigned short y,unsigned char *Ppicture,unsigned int Resolution);
+void DisPlay_ScaleBond_Fangwei(unsigned short x, unsigned short y, unsigned short fangwei, unsigned char *Ppicture);
+void DisPlay_ScaleBond_Fuyang(unsigned short x, unsigned short y, unsigned short fuyang, unsigned char *Ppicture);
+int DisPlay_Target_Bomen(unsigned short x, unsigned short y,unsigned char *Ppicture,unsigned int Resolution);
 
 
 #endif

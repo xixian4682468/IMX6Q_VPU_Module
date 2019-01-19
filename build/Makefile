@@ -35,19 +35,22 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
+
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/mnt/hgfs/ShareFile/92x92_6Q_FPGA图像处理板/Camshift&NCC&KCF_92X92_Alashan"
+CMAKE_SOURCE_DIR = /mnt/hgfs/ShareFile/92x92_6Q_FPGA图像处理板/iMX6Q_VPU_Capture_Module
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/mnt/hgfs/ShareFile/92x92_6Q_FPGA图像处理板/Camshift&NCC&KCF_92X92_Alashan/build"
+CMAKE_BINARY_DIR = /mnt/hgfs/ShareFile/92x92_6Q_FPGA图像处理板/iMX6Q_VPU_Capture_Module/build
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running interactive CMake command-line interface..."
-	/usr/bin/cmake -i .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -66,9 +69,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/hgfs/ShareFile/92x92_6Q_FPGA图像处理板/Camshift&NCC&KCF_92X92_Alashan/build/CMakeFiles" "/mnt/hgfs/ShareFile/92x92_6Q_FPGA图像处理板/Camshift&NCC&KCF_92X92_Alashan/build/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/ShareFile/92x92_6Q_FPGA图像处理板/iMX6Q_VPU_Capture_Module/build/CMakeFiles /mnt/hgfs/ShareFile/92x92_6Q_FPGA图像处理板/iMX6Q_VPU_Capture_Module/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/hgfs/ShareFile/92x92_6Q_FPGA图像处理板/Camshift&NCC&KCF_92X92_Alashan/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/ShareFile/92x92_6Q_FPGA图像处理板/iMX6Q_VPU_Capture_Module/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -96,192 +99,144 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Camshift&NCC_92x92_Alashan.out
+# Target rules for targets named IMX6Q_VPU_Capture_Module.out
 
 # Build rule for target.
-Camshift&NCC_92x92_Alashan.out: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 "Camshift&NCC_92x92_Alashan.out"
-.PHONY : Camshift&NCC_92x92_Alashan.out
+IMX6Q_VPU_Capture_Module.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 IMX6Q_VPU_Capture_Module.out
+.PHONY : IMX6Q_VPU_Capture_Module.out
 
 # fast build rule for target.
-Camshift&NCC_92x92_Alashan.out/fast:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build"
-.PHONY : Camshift&NCC_92x92_Alashan.out/fast
+IMX6Q_VPU_Capture_Module.out/fast:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build
+.PHONY : IMX6Q_VPU_Capture_Module.out/fast
 
-src/Communication.o: src/Communication.c.o
+src/Communication.o: src/Communication.cpp.o
 .PHONY : src/Communication.o
 
 # target to build an object file
-src/Communication.c.o:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/Communication.c.o"
-.PHONY : src/Communication.c.o
+src/Communication.cpp.o:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/Communication.cpp.o
+.PHONY : src/Communication.cpp.o
 
-src/Communication.i: src/Communication.c.i
+src/Communication.i: src/Communication.cpp.i
 .PHONY : src/Communication.i
 
 # target to preprocess a source file
-src/Communication.c.i:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/Communication.c.i"
-.PHONY : src/Communication.c.i
+src/Communication.cpp.i:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/Communication.cpp.i
+.PHONY : src/Communication.cpp.i
 
-src/Communication.s: src/Communication.c.s
+src/Communication.s: src/Communication.cpp.s
 .PHONY : src/Communication.s
 
 # target to generate assembly for a file
-src/Communication.c.s:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/Communication.c.s"
-.PHONY : src/Communication.c.s
+src/Communication.cpp.s:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/Communication.cpp.s
+.PHONY : src/Communication.cpp.s
 
-src/DFT.o: src/DFT.c.o
-.PHONY : src/DFT.o
+src/FerNNClassifier.o: src/FerNNClassifier.cpp.o
+.PHONY : src/FerNNClassifier.o
 
 # target to build an object file
-src/DFT.c.o:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/DFT.c.o"
-.PHONY : src/DFT.c.o
+src/FerNNClassifier.cpp.o:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/FerNNClassifier.cpp.o
+.PHONY : src/FerNNClassifier.cpp.o
 
-src/DFT.i: src/DFT.c.i
-.PHONY : src/DFT.i
+src/FerNNClassifier.i: src/FerNNClassifier.cpp.i
+.PHONY : src/FerNNClassifier.i
 
 # target to preprocess a source file
-src/DFT.c.i:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/DFT.c.i"
-.PHONY : src/DFT.c.i
+src/FerNNClassifier.cpp.i:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/FerNNClassifier.cpp.i
+.PHONY : src/FerNNClassifier.cpp.i
 
-src/DFT.s: src/DFT.c.s
-.PHONY : src/DFT.s
+src/FerNNClassifier.s: src/FerNNClassifier.cpp.s
+.PHONY : src/FerNNClassifier.s
 
 # target to generate assembly for a file
-src/DFT.c.s:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/DFT.c.s"
-.PHONY : src/DFT.c.s
+src/FerNNClassifier.cpp.s:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/FerNNClassifier.cpp.s
+.PHONY : src/FerNNClassifier.cpp.s
 
-src/File_Queue.o: src/File_Queue.c.o
+src/File_Queue.o: src/File_Queue.cpp.o
 .PHONY : src/File_Queue.o
 
 # target to build an object file
-src/File_Queue.c.o:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/File_Queue.c.o"
-.PHONY : src/File_Queue.c.o
+src/File_Queue.cpp.o:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/File_Queue.cpp.o
+.PHONY : src/File_Queue.cpp.o
 
-src/File_Queue.i: src/File_Queue.c.i
+src/File_Queue.i: src/File_Queue.cpp.i
 .PHONY : src/File_Queue.i
 
 # target to preprocess a source file
-src/File_Queue.c.i:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/File_Queue.c.i"
-.PHONY : src/File_Queue.c.i
+src/File_Queue.cpp.i:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/File_Queue.cpp.i
+.PHONY : src/File_Queue.cpp.i
 
-src/File_Queue.s: src/File_Queue.c.s
+src/File_Queue.s: src/File_Queue.cpp.s
 .PHONY : src/File_Queue.s
 
 # target to generate assembly for a file
-src/File_Queue.c.s:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/File_Queue.c.s"
-.PHONY : src/File_Queue.c.s
+src/File_Queue.cpp.s:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/File_Queue.cpp.s
+.PHONY : src/File_Queue.cpp.s
 
-src/Filter_Algorithm.o: src/Filter_Algorithm.c.o
-.PHONY : src/Filter_Algorithm.o
-
-# target to build an object file
-src/Filter_Algorithm.c.o:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/Filter_Algorithm.c.o"
-.PHONY : src/Filter_Algorithm.c.o
-
-src/Filter_Algorithm.i: src/Filter_Algorithm.c.i
-.PHONY : src/Filter_Algorithm.i
-
-# target to preprocess a source file
-src/Filter_Algorithm.c.i:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/Filter_Algorithm.c.i"
-.PHONY : src/Filter_Algorithm.c.i
-
-src/Filter_Algorithm.s: src/Filter_Algorithm.c.s
-.PHONY : src/Filter_Algorithm.s
-
-# target to generate assembly for a file
-src/Filter_Algorithm.c.s:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/Filter_Algorithm.c.s"
-.PHONY : src/Filter_Algorithm.c.s
-
-src/Frame_Difference_Method.o: src/Frame_Difference_Method.c.o
-.PHONY : src/Frame_Difference_Method.o
-
-# target to build an object file
-src/Frame_Difference_Method.c.o:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/Frame_Difference_Method.c.o"
-.PHONY : src/Frame_Difference_Method.c.o
-
-src/Frame_Difference_Method.i: src/Frame_Difference_Method.c.i
-.PHONY : src/Frame_Difference_Method.i
-
-# target to preprocess a source file
-src/Frame_Difference_Method.c.i:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/Frame_Difference_Method.c.i"
-.PHONY : src/Frame_Difference_Method.c.i
-
-src/Frame_Difference_Method.s: src/Frame_Difference_Method.c.s
-.PHONY : src/Frame_Difference_Method.s
-
-# target to generate assembly for a file
-src/Frame_Difference_Method.c.s:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/Frame_Difference_Method.c.s"
-.PHONY : src/Frame_Difference_Method.c.s
-
-src/Init_dev.o: src/Init_dev.c.o
+src/Init_dev.o: src/Init_dev.cpp.o
 .PHONY : src/Init_dev.o
 
 # target to build an object file
-src/Init_dev.c.o:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/Init_dev.c.o"
-.PHONY : src/Init_dev.c.o
+src/Init_dev.cpp.o:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/Init_dev.cpp.o
+.PHONY : src/Init_dev.cpp.o
 
-src/Init_dev.i: src/Init_dev.c.i
+src/Init_dev.i: src/Init_dev.cpp.i
 .PHONY : src/Init_dev.i
 
 # target to preprocess a source file
-src/Init_dev.c.i:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/Init_dev.c.i"
-.PHONY : src/Init_dev.c.i
+src/Init_dev.cpp.i:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/Init_dev.cpp.i
+.PHONY : src/Init_dev.cpp.i
 
-src/Init_dev.s: src/Init_dev.c.s
+src/Init_dev.s: src/Init_dev.cpp.s
 .PHONY : src/Init_dev.s
 
 # target to generate assembly for a file
-src/Init_dev.c.s:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/Init_dev.c.s"
-.PHONY : src/Init_dev.c.s
+src/Init_dev.cpp.s:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/Init_dev.cpp.s
+.PHONY : src/Init_dev.cpp.s
 
-src/KCF_Track.o: src/KCF_Track.c.o
-.PHONY : src/KCF_Track.o
+src/LKTracker.o: src/LKTracker.cpp.o
+.PHONY : src/LKTracker.o
 
 # target to build an object file
-src/KCF_Track.c.o:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/KCF_Track.c.o"
-.PHONY : src/KCF_Track.c.o
+src/LKTracker.cpp.o:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/LKTracker.cpp.o
+.PHONY : src/LKTracker.cpp.o
 
-src/KCF_Track.i: src/KCF_Track.c.i
-.PHONY : src/KCF_Track.i
+src/LKTracker.i: src/LKTracker.cpp.i
+.PHONY : src/LKTracker.i
 
 # target to preprocess a source file
-src/KCF_Track.c.i:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/KCF_Track.c.i"
-.PHONY : src/KCF_Track.c.i
+src/LKTracker.cpp.i:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/LKTracker.cpp.i
+.PHONY : src/LKTracker.cpp.i
 
-src/KCF_Track.s: src/KCF_Track.c.s
-.PHONY : src/KCF_Track.s
+src/LKTracker.s: src/LKTracker.cpp.s
+.PHONY : src/LKTracker.s
 
 # target to generate assembly for a file
-src/KCF_Track.c.s:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/KCF_Track.c.s"
-.PHONY : src/KCF_Track.c.s
+src/LKTracker.cpp.s:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/LKTracker.cpp.s
+.PHONY : src/LKTracker.cpp.s
 
 src/NCC_Track.o: src/NCC_Track.c.o
 .PHONY : src/NCC_Track.o
 
 # target to build an object file
 src/NCC_Track.c.o:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/NCC_Track.c.o"
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/NCC_Track.c.o
 .PHONY : src/NCC_Track.c.o
 
 src/NCC_Track.i: src/NCC_Track.c.i
@@ -289,7 +244,7 @@ src/NCC_Track.i: src/NCC_Track.c.i
 
 # target to preprocess a source file
 src/NCC_Track.c.i:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/NCC_Track.c.i"
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/NCC_Track.c.i
 .PHONY : src/NCC_Track.c.i
 
 src/NCC_Track.s: src/NCC_Track.c.s
@@ -297,296 +252,296 @@ src/NCC_Track.s: src/NCC_Track.c.s
 
 # target to generate assembly for a file
 src/NCC_Track.c.s:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/NCC_Track.c.s"
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/NCC_Track.c.s
 .PHONY : src/NCC_Track.c.s
 
-src/RunLength_Algorithm.o: src/RunLength_Algorithm.c.o
-.PHONY : src/RunLength_Algorithm.o
+src/TLD.o: src/TLD.cpp.o
+.PHONY : src/TLD.o
 
 # target to build an object file
-src/RunLength_Algorithm.c.o:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/RunLength_Algorithm.c.o"
-.PHONY : src/RunLength_Algorithm.c.o
+src/TLD.cpp.o:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/TLD.cpp.o
+.PHONY : src/TLD.cpp.o
 
-src/RunLength_Algorithm.i: src/RunLength_Algorithm.c.i
-.PHONY : src/RunLength_Algorithm.i
+src/TLD.i: src/TLD.cpp.i
+.PHONY : src/TLD.i
 
 # target to preprocess a source file
-src/RunLength_Algorithm.c.i:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/RunLength_Algorithm.c.i"
-.PHONY : src/RunLength_Algorithm.c.i
+src/TLD.cpp.i:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/TLD.cpp.i
+.PHONY : src/TLD.cpp.i
 
-src/RunLength_Algorithm.s: src/RunLength_Algorithm.c.s
-.PHONY : src/RunLength_Algorithm.s
+src/TLD.s: src/TLD.cpp.s
+.PHONY : src/TLD.s
 
 # target to generate assembly for a file
-src/RunLength_Algorithm.c.s:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/RunLength_Algorithm.c.s"
-.PHONY : src/RunLength_Algorithm.c.s
+src/TLD.cpp.s:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/TLD.cpp.s
+.PHONY : src/TLD.cpp.s
 
-src/VPU_Camera.o: src/VPU_Camera.c.o
+src/VPU_Camera.o: src/VPU_Camera.cpp.o
 .PHONY : src/VPU_Camera.o
 
 # target to build an object file
-src/VPU_Camera.c.o:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/VPU_Camera.c.o"
-.PHONY : src/VPU_Camera.c.o
+src/VPU_Camera.cpp.o:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/VPU_Camera.cpp.o
+.PHONY : src/VPU_Camera.cpp.o
 
-src/VPU_Camera.i: src/VPU_Camera.c.i
+src/VPU_Camera.i: src/VPU_Camera.cpp.i
 .PHONY : src/VPU_Camera.i
 
 # target to preprocess a source file
-src/VPU_Camera.c.i:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/VPU_Camera.c.i"
-.PHONY : src/VPU_Camera.c.i
+src/VPU_Camera.cpp.i:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/VPU_Camera.cpp.i
+.PHONY : src/VPU_Camera.cpp.i
 
-src/VPU_Camera.s: src/VPU_Camera.c.s
+src/VPU_Camera.s: src/VPU_Camera.cpp.s
 .PHONY : src/VPU_Camera.s
 
 # target to generate assembly for a file
-src/VPU_Camera.c.s:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/VPU_Camera.c.s"
-.PHONY : src/VPU_Camera.c.s
+src/VPU_Camera.cpp.s:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/VPU_Camera.cpp.s
+.PHONY : src/VPU_Camera.cpp.s
 
-src/Variable_Function.o: src/Variable_Function.c.o
+src/Variable_Function.o: src/Variable_Function.cpp.o
 .PHONY : src/Variable_Function.o
 
 # target to build an object file
-src/Variable_Function.c.o:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/Variable_Function.c.o"
-.PHONY : src/Variable_Function.c.o
+src/Variable_Function.cpp.o:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/Variable_Function.cpp.o
+.PHONY : src/Variable_Function.cpp.o
 
-src/Variable_Function.i: src/Variable_Function.c.i
+src/Variable_Function.i: src/Variable_Function.cpp.i
 .PHONY : src/Variable_Function.i
 
 # target to preprocess a source file
-src/Variable_Function.c.i:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/Variable_Function.c.i"
-.PHONY : src/Variable_Function.c.i
+src/Variable_Function.cpp.i:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/Variable_Function.cpp.i
+.PHONY : src/Variable_Function.cpp.i
 
-src/Variable_Function.s: src/Variable_Function.c.s
+src/Variable_Function.s: src/Variable_Function.cpp.s
 .PHONY : src/Variable_Function.s
 
 # target to generate assembly for a file
-src/Variable_Function.c.s:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/Variable_Function.c.s"
-.PHONY : src/Variable_Function.c.s
+src/Variable_Function.cpp.s:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/Variable_Function.cpp.s
+.PHONY : src/Variable_Function.cpp.s
 
-src/Video_CharSuperimposition.o: src/Video_CharSuperimposition.c.o
+src/Video_CharSuperimposition.o: src/Video_CharSuperimposition.cpp.o
 .PHONY : src/Video_CharSuperimposition.o
 
 # target to build an object file
-src/Video_CharSuperimposition.c.o:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/Video_CharSuperimposition.c.o"
-.PHONY : src/Video_CharSuperimposition.c.o
+src/Video_CharSuperimposition.cpp.o:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/Video_CharSuperimposition.cpp.o
+.PHONY : src/Video_CharSuperimposition.cpp.o
 
-src/Video_CharSuperimposition.i: src/Video_CharSuperimposition.c.i
+src/Video_CharSuperimposition.i: src/Video_CharSuperimposition.cpp.i
 .PHONY : src/Video_CharSuperimposition.i
 
 # target to preprocess a source file
-src/Video_CharSuperimposition.c.i:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/Video_CharSuperimposition.c.i"
-.PHONY : src/Video_CharSuperimposition.c.i
+src/Video_CharSuperimposition.cpp.i:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/Video_CharSuperimposition.cpp.i
+.PHONY : src/Video_CharSuperimposition.cpp.i
 
-src/Video_CharSuperimposition.s: src/Video_CharSuperimposition.c.s
+src/Video_CharSuperimposition.s: src/Video_CharSuperimposition.cpp.s
 .PHONY : src/Video_CharSuperimposition.s
 
 # target to generate assembly for a file
-src/Video_CharSuperimposition.c.s:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/Video_CharSuperimposition.c.s"
-.PHONY : src/Video_CharSuperimposition.c.s
+src/Video_CharSuperimposition.cpp.s:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/Video_CharSuperimposition.cpp.s
+.PHONY : src/Video_CharSuperimposition.cpp.s
 
-src/capture.o: src/capture.c.o
+src/capture.o: src/capture.cpp.o
 .PHONY : src/capture.o
 
 # target to build an object file
-src/capture.c.o:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/capture.c.o"
-.PHONY : src/capture.c.o
+src/capture.cpp.o:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/capture.cpp.o
+.PHONY : src/capture.cpp.o
 
-src/capture.i: src/capture.c.i
+src/capture.i: src/capture.cpp.i
 .PHONY : src/capture.i
 
 # target to preprocess a source file
-src/capture.c.i:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/capture.c.i"
-.PHONY : src/capture.c.i
+src/capture.cpp.i:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/capture.cpp.i
+.PHONY : src/capture.cpp.i
 
-src/capture.s: src/capture.c.s
+src/capture.s: src/capture.cpp.s
 .PHONY : src/capture.s
 
 # target to generate assembly for a file
-src/capture.c.s:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/capture.c.s"
-.PHONY : src/capture.c.s
+src/capture.cpp.s:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/capture.cpp.s
+.PHONY : src/capture.cpp.s
 
-src/enc.o: src/enc.c.o
+src/enc.o: src/enc.cpp.o
 .PHONY : src/enc.o
 
 # target to build an object file
-src/enc.c.o:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/enc.c.o"
-.PHONY : src/enc.c.o
+src/enc.cpp.o:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/enc.cpp.o
+.PHONY : src/enc.cpp.o
 
-src/enc.i: src/enc.c.i
+src/enc.i: src/enc.cpp.i
 .PHONY : src/enc.i
 
 # target to preprocess a source file
-src/enc.c.i:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/enc.c.i"
-.PHONY : src/enc.c.i
+src/enc.cpp.i:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/enc.cpp.i
+.PHONY : src/enc.cpp.i
 
-src/enc.s: src/enc.c.s
+src/enc.s: src/enc.cpp.s
 .PHONY : src/enc.s
 
 # target to generate assembly for a file
-src/enc.c.s:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/enc.c.s"
-.PHONY : src/enc.c.s
+src/enc.cpp.s:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/enc.cpp.s
+.PHONY : src/enc.cpp.s
 
-src/fb.o: src/fb.c.o
+src/fb.o: src/fb.cpp.o
 .PHONY : src/fb.o
 
 # target to build an object file
-src/fb.c.o:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/fb.c.o"
-.PHONY : src/fb.c.o
+src/fb.cpp.o:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/fb.cpp.o
+.PHONY : src/fb.cpp.o
 
-src/fb.i: src/fb.c.i
+src/fb.i: src/fb.cpp.i
 .PHONY : src/fb.i
 
 # target to preprocess a source file
-src/fb.c.i:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/fb.c.i"
-.PHONY : src/fb.c.i
+src/fb.cpp.i:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/fb.cpp.i
+.PHONY : src/fb.cpp.i
 
-src/fb.s: src/fb.c.s
+src/fb.s: src/fb.cpp.s
 .PHONY : src/fb.s
 
 # target to generate assembly for a file
-src/fb.c.s:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/fb.c.s"
-.PHONY : src/fb.c.s
+src/fb.cpp.s:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/fb.cpp.s
+.PHONY : src/fb.cpp.s
 
-src/ffttools.o: src/ffttools.c.o
-.PHONY : src/ffttools.o
-
-# target to build an object file
-src/ffttools.c.o:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/ffttools.c.o"
-.PHONY : src/ffttools.c.o
-
-src/ffttools.i: src/ffttools.c.i
-.PHONY : src/ffttools.i
-
-# target to preprocess a source file
-src/ffttools.c.i:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/ffttools.c.i"
-.PHONY : src/ffttools.c.i
-
-src/ffttools.s: src/ffttools.c.s
-.PHONY : src/ffttools.s
-
-# target to generate assembly for a file
-src/ffttools.c.s:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/ffttools.c.s"
-.PHONY : src/ffttools.c.s
-
-src/fhog.o: src/fhog.c.o
-.PHONY : src/fhog.o
-
-# target to build an object file
-src/fhog.c.o:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/fhog.c.o"
-.PHONY : src/fhog.c.o
-
-src/fhog.i: src/fhog.c.i
-.PHONY : src/fhog.i
-
-# target to preprocess a source file
-src/fhog.c.i:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/fhog.c.i"
-.PHONY : src/fhog.c.i
-
-src/fhog.s: src/fhog.c.s
-.PHONY : src/fhog.s
-
-# target to generate assembly for a file
-src/fhog.c.s:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/fhog.c.s"
-.PHONY : src/fhog.c.s
-
-src/main.o: src/main.c.o
+src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
 # target to build an object file
-src/main.c.o:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/main.c.o"
-.PHONY : src/main.c.o
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-src/main.i: src/main.c.i
+src/main.i: src/main.cpp.i
 .PHONY : src/main.i
 
 # target to preprocess a source file
-src/main.c.i:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/main.c.i"
-.PHONY : src/main.c.i
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-src/main.s: src/main.c.s
+src/main.s: src/main.cpp.s
 .PHONY : src/main.s
 
 # target to generate assembly for a file
-src/main.c.s:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/main.c.s"
-.PHONY : src/main.c.s
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
-src/recttools.o: src/recttools.c.o
-.PHONY : src/recttools.o
+src/patchgenerator.o: src/patchgenerator.cpp.o
+.PHONY : src/patchgenerator.o
 
 # target to build an object file
-src/recttools.c.o:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/recttools.c.o"
-.PHONY : src/recttools.c.o
+src/patchgenerator.cpp.o:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/patchgenerator.cpp.o
+.PHONY : src/patchgenerator.cpp.o
 
-src/recttools.i: src/recttools.c.i
-.PHONY : src/recttools.i
+src/patchgenerator.i: src/patchgenerator.cpp.i
+.PHONY : src/patchgenerator.i
 
 # target to preprocess a source file
-src/recttools.c.i:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/recttools.c.i"
-.PHONY : src/recttools.c.i
+src/patchgenerator.cpp.i:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/patchgenerator.cpp.i
+.PHONY : src/patchgenerator.cpp.i
 
-src/recttools.s: src/recttools.c.s
-.PHONY : src/recttools.s
+src/patchgenerator.s: src/patchgenerator.cpp.s
+.PHONY : src/patchgenerator.s
 
 # target to generate assembly for a file
-src/recttools.c.s:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/recttools.c.s"
-.PHONY : src/recttools.c.s
+src/patchgenerator.cpp.s:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/patchgenerator.cpp.s
+.PHONY : src/patchgenerator.cpp.s
 
-src/utils.o: src/utils.c.o
+src/run_tld.o: src/run_tld.cpp.o
+.PHONY : src/run_tld.o
+
+# target to build an object file
+src/run_tld.cpp.o:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/run_tld.cpp.o
+.PHONY : src/run_tld.cpp.o
+
+src/run_tld.i: src/run_tld.cpp.i
+.PHONY : src/run_tld.i
+
+# target to preprocess a source file
+src/run_tld.cpp.i:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/run_tld.cpp.i
+.PHONY : src/run_tld.cpp.i
+
+src/run_tld.s: src/run_tld.cpp.s
+.PHONY : src/run_tld.s
+
+# target to generate assembly for a file
+src/run_tld.cpp.s:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/run_tld.cpp.s
+.PHONY : src/run_tld.cpp.s
+
+src/tld_utils.o: src/tld_utils.cpp.o
+.PHONY : src/tld_utils.o
+
+# target to build an object file
+src/tld_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/tld_utils.cpp.o
+.PHONY : src/tld_utils.cpp.o
+
+src/tld_utils.i: src/tld_utils.cpp.i
+.PHONY : src/tld_utils.i
+
+# target to preprocess a source file
+src/tld_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/tld_utils.cpp.i
+.PHONY : src/tld_utils.cpp.i
+
+src/tld_utils.s: src/tld_utils.cpp.s
+.PHONY : src/tld_utils.s
+
+# target to generate assembly for a file
+src/tld_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/tld_utils.cpp.s
+.PHONY : src/tld_utils.cpp.s
+
+src/utils.o: src/utils.cpp.o
 .PHONY : src/utils.o
 
 # target to build an object file
-src/utils.c.o:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/utils.c.o"
-.PHONY : src/utils.c.o
+src/utils.cpp.o:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/utils.cpp.o
+.PHONY : src/utils.cpp.o
 
-src/utils.i: src/utils.c.i
+src/utils.i: src/utils.cpp.i
 .PHONY : src/utils.i
 
 # target to preprocess a source file
-src/utils.c.i:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/utils.c.i"
-.PHONY : src/utils.c.i
+src/utils.cpp.i:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/utils.cpp.i
+.PHONY : src/utils.cpp.i
 
-src/utils.s: src/utils.c.s
+src/utils.s: src/utils.cpp.s
 .PHONY : src/utils.s
 
 # target to generate assembly for a file
-src/utils.c.s:
-	$(MAKE) -f "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/build.make" "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/src/utils.c.s"
-.PHONY : src/utils.c.s
+src/utils.cpp.s:
+	$(MAKE) -f CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/build.make CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/src/utils.cpp.s
+.PHONY : src/utils.cpp.s
 
 # Help Target
 help:
@@ -594,36 +549,30 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... Camshift&NCC_92x92_Alashan.out"
+	@echo "... IMX6Q_VPU_Capture_Module.out"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... src/Communication.o"
 	@echo "... src/Communication.i"
 	@echo "... src/Communication.s"
-	@echo "... src/DFT.o"
-	@echo "... src/DFT.i"
-	@echo "... src/DFT.s"
+	@echo "... src/FerNNClassifier.o"
+	@echo "... src/FerNNClassifier.i"
+	@echo "... src/FerNNClassifier.s"
 	@echo "... src/File_Queue.o"
 	@echo "... src/File_Queue.i"
 	@echo "... src/File_Queue.s"
-	@echo "... src/Filter_Algorithm.o"
-	@echo "... src/Filter_Algorithm.i"
-	@echo "... src/Filter_Algorithm.s"
-	@echo "... src/Frame_Difference_Method.o"
-	@echo "... src/Frame_Difference_Method.i"
-	@echo "... src/Frame_Difference_Method.s"
 	@echo "... src/Init_dev.o"
 	@echo "... src/Init_dev.i"
 	@echo "... src/Init_dev.s"
-	@echo "... src/KCF_Track.o"
-	@echo "... src/KCF_Track.i"
-	@echo "... src/KCF_Track.s"
+	@echo "... src/LKTracker.o"
+	@echo "... src/LKTracker.i"
+	@echo "... src/LKTracker.s"
 	@echo "... src/NCC_Track.o"
 	@echo "... src/NCC_Track.i"
 	@echo "... src/NCC_Track.s"
-	@echo "... src/RunLength_Algorithm.o"
-	@echo "... src/RunLength_Algorithm.i"
-	@echo "... src/RunLength_Algorithm.s"
+	@echo "... src/TLD.o"
+	@echo "... src/TLD.i"
+	@echo "... src/TLD.s"
 	@echo "... src/VPU_Camera.o"
 	@echo "... src/VPU_Camera.i"
 	@echo "... src/VPU_Camera.s"
@@ -642,18 +591,18 @@ help:
 	@echo "... src/fb.o"
 	@echo "... src/fb.i"
 	@echo "... src/fb.s"
-	@echo "... src/ffttools.o"
-	@echo "... src/ffttools.i"
-	@echo "... src/ffttools.s"
-	@echo "... src/fhog.o"
-	@echo "... src/fhog.i"
-	@echo "... src/fhog.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/recttools.o"
-	@echo "... src/recttools.i"
-	@echo "... src/recttools.s"
+	@echo "... src/patchgenerator.o"
+	@echo "... src/patchgenerator.i"
+	@echo "... src/patchgenerator.s"
+	@echo "... src/run_tld.o"
+	@echo "... src/run_tld.i"
+	@echo "... src/run_tld.s"
+	@echo "... src/tld_utils.o"
+	@echo "... src/tld_utils.i"
+	@echo "... src/tld_utils.s"
 	@echo "... src/utils.o"
 	@echo "... src/utils.i"
 	@echo "... src/utils.s"

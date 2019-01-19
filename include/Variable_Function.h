@@ -12,7 +12,7 @@ void Send_CMD(char *pCMDData,int nCMDLen);
 
 int QS_IMAGE_TRACK(int Frame_NUM);
 
-int NNC_IMAGE_TRACK(int Frame_NUM);
+int NCC_IMAGE_TRACK(int Frame_NUM);
 
 int Frame_Diff_Method_IMAGE_ALARM(unsigned char sensor);
 

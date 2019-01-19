@@ -7,6 +7,9 @@ SET(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 SET(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
+  "/home/xixian/my-imx6/xiangang/opencv/arm-opencv-v4l2/OpenCVConfig-version.cmake"
+  "/home/xixian/my-imx6/xiangang/opencv/arm-opencv-v4l2/OpenCVConfig.cmake"
+  "/home/xixian/my-imx6/xiangang/opencv/arm-opencv-v4l2/OpenCVModules.cmake"
   "../CMakeLists.txt"
   "CMakeFiles/CMakeCCompiler.cmake"
   "CMakeFiles/CMakeCXXCompiler.cmake"
@@ -25,6 +28,7 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-2.8/Modules/CMakeDetermineSystem.cmake"
   "/usr/share/cmake-2.8/Modules/CMakeFindBinUtils.cmake"
   "/usr/share/cmake-2.8/Modules/CMakeGenericSystem.cmake"
+  "/usr/share/cmake-2.8/Modules/CMakeParseArguments.cmake"
   "/usr/share/cmake-2.8/Modules/CMakeParseImplicitLinkInfo.cmake"
   "/usr/share/cmake-2.8/Modules/CMakeSystem.cmake.in"
   "/usr/share/cmake-2.8/Modules/CMakeSystemSpecificInformation.cmake"
@@ -35,6 +39,8 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-2.8/Modules/Compiler/GNU-C.cmake"
   "/usr/share/cmake-2.8/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake-2.8/Modules/Compiler/GNU.cmake"
+  "/usr/share/cmake-2.8/Modules/FindPackageHandleStandardArgs.cmake"
+  "/usr/share/cmake-2.8/Modules/FindPackageMessage.cmake"
   "/usr/share/cmake-2.8/Modules/Platform/Linux-GNU-C.cmake"
   "/usr/share/cmake-2.8/Modules/Platform/Linux-GNU-CXX.cmake"
   "/usr/share/cmake-2.8/Modules/Platform/Linux-GNU.cmake"
@@ -55,5 +61,5 @@ SET(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 SET(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/Camshift&NCC_92x92_Alashan.out.dir/DependInfo.cmake"
+  "CMakeFiles/IMX6Q_VPU_Capture_Module.out.dir/DependInfo.cmake"
   )

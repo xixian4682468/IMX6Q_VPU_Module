@@ -89,13 +89,15 @@ static float f32_sigma=0.01f;
 static float f32_sigma2=0.01f;
 
 
-void NCC_Parameter_Init(void)
+
+
+void Init_Addr(void)
 {
 	/***************************内存地址*********************/
 	//pSrc1 = (unsigned char*)malloc(sizeof(char)* 256 * 256);
 	Template = (unsigned char*)malloc(sizeof(char)* 64 * 64);//指定模板存储位置,模板大小为64*64:0x1000，预留0x3000
 	Template2 = (unsigned char*)malloc(sizeof(char)* 64 * 64);//指定备份模板存储位置,备份模板为64*64:0x1000，预留0x3000
-	gSubImageData = (unsigned char*)malloc(sizeof(char)* 1920 * 1080);//读子图像,大小为256*256:0x10000
+	//gSubImageData = (unsigned char*)malloc(sizeof(char)* 1920 * 1080);//读子图像,大小为256*256:0x10000
 	gSCorrData = (int*)malloc(sizeof(int)* 128 * 128);// 最终的相关系数值，大小为128*128*4:0x10000
 	gSum = (int*)malloc(sizeof(int)* 129 * 129); // 图像积分图，大小为129*129*4：0x10404
 	gSqsum = (long long*)malloc(sizeof(long long)* 129 * 129); //图像平方积分图,大小为129*129*8：0x20808
@@ -104,18 +106,17 @@ void NCC_Parameter_Init(void)
 	gSImageData = (unsigned char*)malloc(sizeof(char)* 128 * 128);//搜索区域图像，大小为128*128:0x4000
 
 	
-
-		//根据图像情况选择合适的尺寸
+	//根据图像情况选择合适的尺寸
 	//gSubImageWidth   = 640;//搜索子图像宽度
 	//gSubImageHeight  = 480;//搜索子图像高度
 }
 
-void NCC_Parameter_UnInit(void)
+void UnInit_Addr(void)
 {
 	/***************************内存地址*********************/
 	free(Template);
 	free(Template2);
-	free(gSubImageData);
+	//free(gSubImageData);
 	free(gSCorrData);
 	free(gSum);
 	free(gSqsum);

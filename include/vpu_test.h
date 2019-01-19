@@ -22,8 +22,29 @@
 #include <stdint.h>
 #include <semaphore.h>
 #include "mxc_ipu_hl_lib.h"
+
+
+//g++ :undefined reference to `vpu_Init(void*)'等原因，
+//这些头文件中函数是C编译器编译，如果C++编译器想包含，需使用如下形式
+/***************************************************************
+#ifdef __cplusplus
+extern "C" {
+#endif
+...
+...
+#ifdef __cplusplus
+}
+#endif
+****************************************************************/
+#ifdef __cplusplus
+extern "C" {
+#endif
 #include "vpu_lib.h"
 #include "vpu_io.h"
+#ifdef __cplusplus
+}
+#endif
+
 
 #define COMMON_INIT
 
@@ -279,8 +300,12 @@ struct encode {
 };
 
 void framebuf_init(void);
-int fwriten(int fd, void *vptr, size_t n);
-int freadn(int fd, void *vptr, size_t n);
+//int fwriten(int fd, void *vptr, size_t n);
+int fwriten(int fd, char *vptr, size_t n);//g++ :'void*' to 'char*'
+
+//int freadn(int fd, void *vptr, size_t n);
+int freadn(int fd, char *vptr, size_t n);//g++ :'void*' to 'char*'
+
 int vpu_read(struct cmd_line *cmd, char *buf, int n);
 int vpu_write(struct cmd_line *cmd, char *buf, int n);
 void get_arg(char *buf, int *argc, char *argv[]);
@@ -333,4 +358,6 @@ static inline int is_mx6x_mjpg(int fmt)
         else
                 return false;
 }
+
+
 #endif

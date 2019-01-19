@@ -15,58 +15,34 @@
 #include <unistd.h>
 
 
+#define H264 1
+#define JPG  2
+
 typedef struct
 {
-	unsigned char* base;
+	char* base;
 	short front;	
 	short rear;		
 	short maxLength;
 }SqQueue;
 
-typedef struct                          
-{
-	unsigned char* base;
-	unsigned int  front;
-	unsigned int  rear;
-	unsigned int  maxLength;
-}EncSqQueue;
 
-typedef struct                            //图像队列
-{
-	unsigned char* base;
-	unsigned int  front;
-	unsigned int  rear;
-	unsigned int  maxLength;
-}PicSqQueue;
-
-extern char filename[256][256];
-extern short len_findinfo ;
-
-
-void create_file(char *filename);
+void create_file(const char *filename);
 int trave_dir(char* path, int depth);
-int EmptyDir(char *destDir) ;
-char *new_264 (int h264_jpg);
-
-short EncQueueInit(EncSqQueue* Q,unsigned int maxLength);
-unsigned int EncQueueLength(EncSqQueue *Q);
-short EncQueuePushBack(EncSqQueue *Q,unsigned char *pSrc, unsigned int num);
-short EncQueuePopFront(EncSqQueue *Q, unsigned char *pDst, unsigned int num, signed short bEraseFlag);
-
-short PicQueuePushBack(PicSqQueue *Q,unsigned char *pSrc, unsigned int num);
-short PicQueuePopFront(PicSqQueue *Q, unsigned char *pDst, unsigned int num,signed short bEraseFlag);
-unsigned int  PicQueueLength(PicSqQueue *Q);
-short PicQueueInit(PicSqQueue* Q,unsigned int maxLength);
+int EmptyDir(const char *destDir) ;
+char *new_264(int type);
 
 
-short QueueInit(SqQueue* Q,signed short maxLength);
-short QueueLength(SqQueue *Q);
-short QueuePopFront(SqQueue *Q, unsigned char *pDst, signed short num,signed short bEraseFlag);
-short QueuePushBack(SqQueue *Q, unsigned char *pSrc, signed short num);
+int QueueInit(SqQueue* Q, int maxLength);
+int QueueLength(SqQueue *Q);
+int QueuePopFront(SqQueue *Q,  char *pDst,  int num, int bEraseFlag);
+int QueuePushBack(SqQueue *Q,  char *pSrc,  int num);
 
 
-short QueueCompare(SqQueue *Q, signed short pos,unsigned char *pDst, signed short num);
-short FrameCompare(SqQueue *Q, unsigned char *pHeadSrc, signed short headnum,unsigned char *pTailSrc, signed short tailnum,signed short framelength);
+int QueueCompare(SqQueue *Q,  int pos, char *pDst,  int num);
+
+//比较数据的头部 和 尾部 数据是否一致***********
+int FrameCompare(SqQueue *Q, char *pHeadSrc, int headnum, char *pTailSrc, int tailnum, int framelength);
 
 
 #endif
